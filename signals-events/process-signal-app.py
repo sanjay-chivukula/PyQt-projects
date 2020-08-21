@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
     # The event is fired when the context menu is about to be shown.
     # By overriding, this function will receive events of this type.
     def contextMenuEvent(self, event: QContextMenuEvent):
-        print("Context Menu Event, Triggered on mouse right click on Main "
+        print("Context Menu Event, Triggered by mouse right click on Main "
               "Window!!!")
         super(MainWindow, self).contextMenuEvent(event)
 
