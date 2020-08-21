@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QLabel
+from PyQt5.QtGui import QContextMenuEvent
 from PyQt5.QtCore import Qt
 
 
@@ -33,6 +34,14 @@ class MainWindow(QMainWindow):
     def onWindowTitleChange(title_string):
         print("Window Title Changed!!!")
         print(title_string)
+
+    # Overriding from QMainWindow, this intercepts the context menu event.
+    # The event is fired when the context menu is about to be shown.
+    # By overriding, this function will receive events of this type.
+    def contextMenuEvent(self, event: QContextMenuEvent):
+        print("Context Menu Event, Triggered on mouse right click on Main "
+              "Window!!!")
+        super(MainWindow, self).contextMenuEvent(event)
 
 
 def test_app_driver(*args, **kwargs):
