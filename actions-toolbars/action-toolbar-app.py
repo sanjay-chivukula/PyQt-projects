@@ -45,11 +45,9 @@ class MainWindow(QMainWindow):
         toolbar.addAction(action_button2)
 
         toolbar.addSeparator()
-        
+
         toolbar.addWidget(QLabel("Toolbar Label"))
         toolbar.addWidget(QCheckBox())
-
-
 
         statusbar = QStatusBar(self)
         self.setStatusBar(statusbar)
