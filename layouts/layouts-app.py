@@ -20,6 +20,16 @@ class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
 
+        widgets = [Color('red'), Color('blue'), Color('yellow'), Color('gray')]
+
+        layout = QVBoxLayout()
+        for widget in widgets:
+            layout.addWidget(widget)
+
+        widget = Color('gray')
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
+
 
 def test_app_driver(*args, **kwargs):
     app = QApplication(*args, **kwargs)
